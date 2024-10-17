@@ -1,0 +1,12 @@
+Flask==2.3.0
+Flask-API==3.0.post1
+boto3
+aws-secretsmanager-caching
+psycopg2-binary
+sqlalchemy
+werkzeug==2.3.8
+gunicorn
+circuitbreaker
+requests
+retry
+python-json-logger

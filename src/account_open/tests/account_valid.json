@@ -1,0 +1,24 @@
+{
+  "customer_first_name": "kevin",
+  "customer_last_name": "coding",
+  "account_type": "moneymaker",
+  "comment": "AWSome Investing - consider account as a uuid generated before submitting & used for idempotency",
+  "beneficiaries": [
+    {
+      "name": "Joe",
+      "percentage": 75
+    },
+    {
+      "name": "Sarah",
+      "percentage": 25
+    }
+  ],
+  "suitability": {
+    "liquidity": "low",
+    "time_horizon": "20 years",
+    "risk_tolerance": "high"
+  },
+  "instructions": {
+    "dividends": "reinvest-all"
+  }
+}

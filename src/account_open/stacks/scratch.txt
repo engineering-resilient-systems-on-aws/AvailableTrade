@@ -1,0 +1,36 @@
+
+
+# todo 1/ check parameter store to see if RDS customer master exists
+# todo DONE 2/ write account to DDB, ideally after serializing from a dataclass, to make life happy. make it work
+# todo DONE 3/ test regional failover
+# todo DONE 4/ test duplicated messages
+# todo 5/ review and update the chapters use case to tech
+# todo 6/ start writing account open service (messaging / lambda) chapter content
+# todo 7/ create alarms and dashboards
+# todo 8/ improve the tests, easier to run and report on. Part of the narrative, part of CI/CD - GROUP strategy decision
+# todo 9/ test out a more robust account graph with some nested objects, review account open and add more realistic fields
+
+# todo ?/ post CDK run, use boto3 to enable active tracing on the sns topics, delivery status logging?
+# both are not supported by CDK, delivery status not in Cfn, so require API calls after CDK to enable them
+# right now even enabling tracing on SNS, it's not showing up, so no SNS or SQS in traces
+# but docs state if API gateway calls, and tracing is enabled, it would work. So maybe should use a test lambda
+# instead of CLI and have tracing on in the test lambda, it could be API enabled and just use SAM to deploy or something
+# super simple. Noodle on it or ask around
+
+# HA can be tested by setting up a Lambda error. SQS will retry. So break code, then fix code, message
+# gets success on same region - write about it in text
+
+# DR will get tested by created a similar failure, but instead of then fixing the code, change regions
+# error will get fixed. A feature flag that toggles an error on and off is a nice way to package this up, or
+# a bad single region deployment can do the same thing (with CDK) - write about it in text
+
+# toggle regions
+aws s3 cp failover.txt s3://failover-bucket-us-west-1-998541053034/failover.txt
+aws s3 rm s3://failover-bucket-us-west-1-998541053034/failover.txt
+
+# retention
+when you delete this multistack project the S3 bucket, cloudwatch log groups and dynamodb tables are retained.
+you must delete each of them manually in each region. To delete the tables you must first turn off deletion projection.
+
+local lambda execution
+# testing: `cdk sync` then `sam local invoke -t cdk.out/ChXStack-primary.template.json --region us-east-2`

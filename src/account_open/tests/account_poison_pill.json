@@ -1,0 +1,14 @@
+{
+  "customer_first_name": "xxx",
+  "customer_last_name": "yyyy",
+  "account_type": "poison pill",
+  "comment": "you're going to have to purge this message",
+  "suitability": {
+    "liquidity": "low",
+    "time_horizon": "20 years",
+    "risk_tolerance": "high"
+  },
+  "instructions": {
+    "dividends": "reinvest-all"
+  }
+}

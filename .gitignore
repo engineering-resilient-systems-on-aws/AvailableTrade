@@ -1,0 +1,12 @@
+**/venv
+**/.venv
+**/*bkp
+**/*dtmp
+**/*DS_Store
+**/*idea
+**/.vscode
+env.sh
+**/node_modules
+/package.json
+/package-lock.json
+**/~*.*x

@@ -1,0 +1,3 @@
+aws-cdk-lib>=2.148.1
+constructs>=10.0.0,<11.0.0
+cdk-ecs-service-extensions>=2.0.0

@@ -1,0 +1,7 @@
+Flask==2.3.0
+Flask-API==3.0.post1
+werkzeug==2.3.8
+python-json-logger
+gunicorn
+requests
+boto3

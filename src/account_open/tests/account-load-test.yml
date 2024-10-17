@@ -1,0 +1,55 @@
+config:
+  # This is a test server run by team Artillery
+  # It's designed to be highly scalable
+  target: "{{ url }}"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 2
+      name: Warm up phase
+    - duration: 60
+      arrivalRate: 2
+      rampTo: 4
+      name: Ramp up load
+    - duration: 30
+      arrivalRate: 10
+      rampTo: 30
+      name: Spike phase
+  # Load & configure a couple of useful plugins
+  # https://docs.art/reference/extensions
+  plugins:
+    ensure: { }
+    apdex: { }
+    metrics-by-endpoint: { }
+  apdex:
+    threshold: 100
+  ensure:
+    thresholds:
+      - http.response_time.p99: 200
+      - http.response_time.p95: 150
+scenarios:
+  - flow:
+      - loop:
+          - put:
+              url: "/prod/"
+              json:
+                customer_first_name: "load"
+                customer_last_name: "test"
+                account_type: "performance"
+                comment: "don't stop me now"
+                request_token: "{{$randomNumber(1,1000000000000000)}}"
+                user_id: "loaduser{{$randomNumber(1,10000)}}"
+                beneficiaries:
+                  - name: "bene1"
+                    percentage: 63
+                  - name: "bene2"
+                    percentage: 27
+                suitability:
+                  "liquidity": "high"
+                  "time_horizon": "7 years"
+                  "risk_tolerance": "low"
+                "instructions":
+                  "dividends": "pay-out-all"
+              expect:
+                - statusCode: 200
+        count: 100

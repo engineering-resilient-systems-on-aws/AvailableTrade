@@ -1,0 +1,1 @@
+placing this file into the dr recovery bucket will cause the system to fail over to the secondary region

@@ -1,0 +1,37 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+.page-header {
+  color: midnightblue;
+}
+
+.header-nav {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.error {
+  color: crimson;
+  font-weight: bold;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(245, 100%, 21%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: block;
+    place-items: center;
+  }
+}

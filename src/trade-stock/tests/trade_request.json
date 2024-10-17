@@ -1,0 +1,8 @@
+{
+  "request_id": "NEED TO ADD THIS FROM A TEST CLIENT",
+  "customer_id": "4",
+  "symbol_ticker": "IPAY",
+  "transaction_type": "buy",
+  "current_price": "40.06",
+  "share_count": "100"
+}
