@@ -1,8 +1,8 @@
 # engineering-resilient-systems-on-aws
 
-This repository holds the accompanying source code for the book "Engineering Resilient Systems on AWS."
-The code will be published here soon. 
+This repository holds the companion source code for the new book O'Reilly book "Engineering Resilient Systems on AWS", ISBN 9781098162429, by Kevin Schwarz, Jennifer Moran and Nate Bachmeier.
+The source code is now available!
+We'll add updates to this README document when we have changes. 
+The Kindle version is now available and the print version will be soon! You can purchase on Amazon: http://amzn.to/4ftNR1j
 
-The book is now available for pre-order on Amazon: http://amzn.to/4ftNR1j
-
-![Cover](ER_cover.png)
+![Cover](cover.png)
