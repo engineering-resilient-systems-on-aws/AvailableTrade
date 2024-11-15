@@ -12,7 +12,6 @@ from trade_utils.trade_parameter_name import TradeParameterName
 
 
 class TradeDatabaseStack(cdk.Stack):
-    # https://github.com/mazyu36/cdk_aurora_global_database/blob/main/bin/cdk_aurora_global_database.ts
 
     def __init__(self, scope: Construct, construct_id: str, vpc: ec2.Vpc, secondary_region: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
