@@ -28,15 +28,9 @@ class TradeConfirmsStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, vpc: ec2.Vpc, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # ToDO is it possible to use a single image, cross region, address this
-        # make a decision, push to both regions, or use replication.
-        # if using replication, you need to pull the image from ECR by tag
-        # to learn how to do this, you should also write the code to pull down the x-ray image from
-        # dockerhub and push it to your repo, then enable X-Ray by using your customer sidecar, parameterize the image
-        # or standardize on the image name and put a copy in each region.
-        # you have to read up a bit more on ECR and learn best practices for mult-region
+        # you should be able to pull down the x-ray image from
+        # dockerhub and push it to your repo, then enable X-Ray 
 
-        # ToDO turn on scan on push
         confirms_api_image = ecr.DockerImageAsset(self, 'confirms_api_image',
                                                   directory=os.path.join(os.path.dirname('.'), 'confirms_api'))
         cluster = ecs.Cluster(self, "TradeConfirmsCluster", container_insights=True, vpc=vpc)
