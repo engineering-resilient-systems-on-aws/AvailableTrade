@@ -50,7 +50,6 @@ class TradeDatabaseSecondaryStack(cdk.Stack):
 
         order_api_user_name = "order_api_user"
 
-        # create a regional task role, give it access to the api user secret and the
         self.task_role = iam.Role(self, "TradingApiTaskRole",
                                   role_name=cdk.PhysicalName.GENERATE_IF_NEEDED,
                                   assumed_by=iam.ServicePrincipal('ecs-tasks.amazonaws.com'))
