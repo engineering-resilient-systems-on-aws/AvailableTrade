@@ -30,8 +30,6 @@ class TradeOrderStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, vpc: ec2.Vpc, task_role: iam.Role, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # ToDO is it possible to use a single image, cross region, address this
-
         trading_api_image = ecr.DockerImageAsset(self, 'order_api_image',
                                                  directory=os.path.join(os.path.dirname('.'), 'order_api'))
         trading_api_image.repository.image_scan_on_push = True
