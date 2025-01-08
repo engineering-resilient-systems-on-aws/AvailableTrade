@@ -39,7 +39,7 @@ args = parser.parse_args()
 test = args.test
 
 if test == 1:
-    command = "artillery run front-end-website-load-test.yml --variables '{ \"url\": \"{url}\" }'".replace(
+    command = "artillery run frontend-website-load-test.yml --variables '{ \"url\": \"{url}\" }'".replace(
         "{url}", get_url(True))    
     print(command)
     os.system(command)
