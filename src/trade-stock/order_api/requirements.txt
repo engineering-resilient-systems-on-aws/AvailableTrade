@@ -4,7 +4,7 @@ boto3
 aws-secretsmanager-caching
 psycopg2-binary
 sqlalchemy
-werkzeug==3.0.3
+werkzeug==3.0.6
 gunicorn
 circuitbreaker
 requests
