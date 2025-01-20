@@ -1,6 +1,6 @@
 Flask==2.3.0
 Flask-API==3.0.post1
-werkzeug==2.3.8
+werkzeug==3.0.6
 python-json-logger
 gunicorn
 requests
