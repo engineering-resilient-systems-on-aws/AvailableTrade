@@ -6,6 +6,6 @@ The source code is now available!
 
 We'll add updates to this README document when we have changes. 
 
-The Kindle version is now available and the print version will be soon! You can purchase on Amazon: http://amzn.to/4ftNR1j
+The Kindle version and print versions are available! You can purchase on order both on Amazon: http://amzn.to/4ftNR1j
 
 ![Cover](cover.png)
